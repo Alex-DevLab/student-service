@@ -36,7 +36,7 @@ export const addScore = (id, exam, score) => {
     const student = findStudent(id);
     if (student) {
         student.scores[exam] = score;
-        return student;
+        return true;
     } else {
         return false;
     }
@@ -45,7 +45,7 @@ export const addScore = (id, exam, score) => {
 export const findByName = (name) => {
     const studentsArray = [];
     students.forEach((student) => {
-        if (student.name.toLowerCase() === name) {
+        if (student.name.toLowerCase() === name.toLowerCase()) {
             studentsArray.push(student);
         }
     });
